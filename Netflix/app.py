@@ -205,11 +205,11 @@ def init_db():
                    )''')
 
     demo_data = [
-        (1, 'jj@gmail.com','iambatman'),
-        (2, 'jm@gmail.com', 'eggs are awesome')
+        ('jj@gmail.com','iambatman'),
+        ('jm@gmail.com', 'eggs are awesome')
     ]
 
-    cursor.executemany("INSERT INTO Account (account_id, email, password_hash) VALUES (?,?,?)", demo_data)
+    cursor.executemany("INSERT INTO Account (email, password_hash) VALUES (?,?)", demo_data)
 
     conn.commit()
     conn.close()
